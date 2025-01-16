@@ -1,0 +1,200 @@
+.hero{
+    display: grid;
+    width: 100%;
+    min-height: 540px;
+    padding: 0 4%;
+    margin: 100px 0;
+    grid-template-columns: 1fr 360px;
+    grid-template-rows: 180px 360px;
+    grid-template-areas:
+    "slider calendar"
+    "slider leaderboard";
+    gap: 12px;
+    column-gap: 80px;
+}
+
+.calendar{
+    grid-area: calendar;
+}
+.leaderboard{
+    grid-area: leaderboard;
+}
+.slider{
+    grid-area: slider;
+}
+
+.leaderboard h1{
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.leaderboard ul{
+    margin-top: 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.leaderboard ul li{
+    display: flex;
+    align-items: center;
+    justify-content: left-space-between;
+    gap: 4px;
+    padding: 0 15%;
+    width: 100%;
+    height: 52px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 40px;
+    background-color: #828282;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.leaderboard ul li.Top1LB{
+    background-color: white;
+}
+
+.leaderboard ul li:hover{
+    scale: 1.05;
+}
+.leaderboard ul li i{
+    font-weight: normal;
+    font-style: normal;
+}
+.leaderboard button {
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+.leaderboard button:hover{
+   scale: 1.1;
+}
+/* calendar CSS begin */
+.calendar ul{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.calendar ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 5%;
+    width: 100%;
+    height: 40px;
+    color: #828282;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.calendar ul li.active{
+    background-color: white;
+    font-size: 16px;
+    height: 60px;
+    color: black;
+}
+
+.calendar ul li i.time{
+    font-weight: bold;
+    font-style: normal;
+}
+.calendar ul li:hover{
+    scale: 1.05;
+}
+/* calendar CSS End */
+.slider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #191919;
+}
+.slider .slide {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all .2s;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    position: relative;
+}
+.slider .slide:hover img {
+    opacity: 0.5;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .2s;
+}
+.slide .titleSlid{
+    position: absolute;
+    bottom: 0px;
+    padding: 20px 32px;
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    height: auto;
+    width: inherit;
+    transition: all .2s;
+}
+.slide:hover .titleSlid{
+    opacity: 1;
+}   
+
+.slide .titleSlid h1{
+    color: white;
+    margin-bottom: 4px;
+}
+.slide .titleSlid p{
+    color: white;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.buttonCont {
+    float: right;
+}
+
+.slider .navBut{
+    position: absolute;
+    display: flex;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    width: 32px;
+    height: 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all .2s;
+}
+.slider .navBut:hover{
+    scale: 1.1;
+}
+.slider .navBut:active{
+    scale: 0.9;
+}
+
+.slider .navBut.prev{
+    left: -10px;
+}
+.slider .navBut.next{
+    right: -10px;
+}

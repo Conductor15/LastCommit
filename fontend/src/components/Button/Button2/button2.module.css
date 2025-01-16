@@ -1,0 +1,23 @@
+.button2 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 40px;
+    text-decoration: none;
+    background:  #828282;
+    padding: 0 18px;
+    border-radius: 8pt;
+    border: none;
+    transition: all .2s;
+    display: inline-block;
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background: linear-gradient(to right, #910888, #5C0AAE);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    scale: 1.03;
+}

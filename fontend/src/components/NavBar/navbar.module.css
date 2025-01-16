@@ -1,0 +1,29 @@
+/* NavBar */
+#navbar {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+#navbar li a{
+    display: block;
+    text-decoration: none;
+    line-height: 100%;
+    color: #fff;
+    transition: all .2s;
+}
+#navbar li a:hover {
+    font-weight: bolder;
+}
+#navbar li{
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    
+}
+#navbar li #currPage{
+    font-weight: bolder;
+}
