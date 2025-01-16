@@ -1,0 +1,46 @@
+#Header {
+    display: flex;
+    justify-content:space-between; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background-color: #191919;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 0 50px;
+}
+#logoButton {
+    display: block;
+    height: 50%;
+    width: auto;
+    float: left;
+}
+#headLogo {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+.butContainer {
+    color: white;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-right: 0%;
+}
+.butContainer div {
+    padding: 10px;
+    border-radius: 10px;
+    transition: all .2s;
+}
+.butContainer div:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.butContainer i {
+    font-weight: 600;
+}

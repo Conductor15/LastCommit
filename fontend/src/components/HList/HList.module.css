@@ -1,0 +1,35 @@
+.hList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 100px 4%;
+    gap: 40px;
+}
+.headingCont{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headingCont a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+.headingCont a:hover{
+    background-color: rgba(130, 130, 130, 0.2);
+}
+.headingCont a:active{
+    background-color: rgba(130, 130, 130, 0.4);
+}
+.cardContainer{
+    display: flex;
+    gap: 4%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+}

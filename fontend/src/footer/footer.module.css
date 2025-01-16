@@ -1,0 +1,47 @@
+.footer{
+    height: 400px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 60px;
+    padding-top: 40px;
+    color: white;
+}
+.links{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 20px;
+    grid-template-areas:
+    "categories nav . contact";
+
+}
+
+.catergories{
+    grid-area: categories;
+}
+.navLinks{
+    grid-area: nav;
+}
+.contact{
+    grid-area: contact;
+}
+
+.footerBottom{
+    display: flex;
+justify-content: space-between;
+}
+
+.name {
+    font-size: 24px;
+    line-height: 100%;
+    font-family: 'Teko', 'Inter', Helvetica, sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+.copyRight{
+    font-size: 14px;
+    color: #828282;
+}
