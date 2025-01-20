@@ -40,7 +40,14 @@ module.exports.index = async (req, res) => {
     .limit(objectPagination.limitItems)
     .skip(objectPagination.skip);
 
-    res.json(posts);
+    res.json({
+        pagination:{
+            limitItems: objectPagination.limitItems,
+            totalItem: countPost,
+            totalPage: objectPagination.totalPage
+        },
+        data: posts
+    });
 };
 
 // [GET] /api/v1/posts/detail/:id
