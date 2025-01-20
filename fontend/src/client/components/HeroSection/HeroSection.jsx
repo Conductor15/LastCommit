@@ -1,6 +1,6 @@
 import styles from './HeroSection.module.css';
-import sliderTemp from '../../assets/sliderTemp.jpg';
-import Button3 from '../Button/Button3/button3.jsx'
+import sliderTemp from '../../../shared/assets/sliderTemp.jpg';
+import Button3 from '../../../shared/components/Button/Button3/button3.jsx';
 function HeroSection() {
 
 

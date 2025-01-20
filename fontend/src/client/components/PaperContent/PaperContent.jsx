@@ -1,5 +1,4 @@
 import styles from './PaperContent.module.css';
-import tempImg from '../../assets/sliderTemp.jpg';
 import ContentPics from '../contentPicsture/contentPic.jsx'
 function PaperContent(){
     return (

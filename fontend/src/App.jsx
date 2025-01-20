@@ -1,13 +1,13 @@
-import Header from './header/header.jsx';
-import Footer from './footer/footer.jsx';
-import Body  from './body/Body.jsx';
-
+import { Routes, Route  } from 'react-router-dom';
+import Admin from './admin/Admin.jsx';
+import Client from './client/Client.jsx';
 function App() {
   return (
     <>
-    <Header />
-    <Body />
-    <Footer />
+    <Routes>
+      <Route path="*" element={<Client />} />
+      <Route path="/admin" element={<Admin />} />
+    </Routes>
     </>
   );
 }

@@ -1,4 +1,3 @@
-import API from '../../API.js';
 import styles from './navbar.module.css';
 import { Link } from 'react-router-dom';
 function NavBar() {

@@ -1,5 +1,5 @@
 import styles from './VList.module.css';
-import Card2 from '../Card/Card2/card2';
+import Card2 from '../../../shared/components/Card/Card2/Card2.jsx';
 
 function VList(){
     return (

@@ -1,5 +1,5 @@
 import styles from './footer.module.css';
-import FooterLinks from '../components/footerLinks/footerLinks.jsx';
+import FooterLinks from '../footerLinks/footerLinks.jsx';
 
 function Footer() {
   return (

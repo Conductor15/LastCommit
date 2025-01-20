@@ -1,7 +1,7 @@
 import styles from './HList.module.css';
-import Card1 from '../Card/Card1/Card1.jsx';
+import Card1 from '../../../shared/components/Card/Card1/Card1.jsx';
 import { useState, useEffect } from 'react';
-import API from '../../API.js';
+import API from '../../../shared/utils/API.js';
 import { useNavigate } from 'react-router-dom';
 
 function HList(props) {
@@ -47,6 +47,7 @@ function HList(props) {
                 if (page > 1) navigate('?page='+page, {replace: true});
             })
     }, [page]);
+
     return (
         <div className={styles.hList}> 
             <div className={styles.headingCont}>
@@ -60,7 +61,7 @@ function HList(props) {
             <div className={styles.cardContainer}>
                 {posts}
             </div>
-            <div>
+            <div className={styles.pagesBut}>
                 {pagesBut}
             </div>
         </div>

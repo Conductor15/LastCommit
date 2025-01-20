@@ -1,5 +1,5 @@
 import styles from './contentPic.module.css';
-import tempImg from '../../assets/sliderTemp.jpg';
+import tempImg from '../../../shared/assets/sliderTemp.jpg';
 
 function ContentPic(){
     return (

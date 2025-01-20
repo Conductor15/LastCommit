@@ -1,8 +1,6 @@
 import styles from "./header.module.css";
-import NavBar from "../components/NavBar/navbar.jsx";
-import Button1 from "../components/Button/Button1/button1.jsx";
-import Button2 from "../components/Button/Button2/button2.jsx";
-import whitelogo from '../assets/logo/whiteLogo.svg';
+import NavBar from "../NavBar/navbar.jsx";
+import whitelogo from '../../assets/logo/whitelogo.svg';
 
 function Header() {
   return (
