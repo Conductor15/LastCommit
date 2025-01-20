@@ -1,6 +1,6 @@
 import API from '../../API.js';
 import styles from './navbar.module.css';
-
+import { Link } from 'react-router-dom';
 function NavBar() {
     // [categories, setCategories] = useState([]);
     // fetch(API.get_categories)
@@ -13,12 +13,12 @@ function NavBar() {
 
   return (
     <ul id={styles.navbar}>
-        <li> <a id={styles.currPage} href="">Home</a> </li>
-        <li> <a href="">DSA</a> </li>
-        <li> <a href="">Software</a></li>
-        <li> <a href="">Data Science</a></li>
-        <li><a href="">AI</a></li>
-        <li><a href="">Security</a></li>
+        <li> <Link id={styles.currPage} to="/">Home</Link> </li>
+        <li> <Link to="">DSA</Link> </li>
+        <li> <Link to="">Software</Link></li>
+        <li> <Link to="">Data Science</Link></li>
+        <li><Link to="">AI</Link></li>
+        <li><Link to="">Security</Link></li>
     </ul>
   );
 }

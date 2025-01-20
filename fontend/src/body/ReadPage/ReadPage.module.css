@@ -1,0 +1,26 @@
+.readPage{
+    display: grid;
+    grid-template-columns: 5% 60% 1fr;
+    gap: 4%;
+    color: white;
+    grid-template-areas: "sideNav main sidebar";
+
+}
+.readPage .main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+}
+.readPage .side{
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.readPage .sideNav{
+    grid-area: sideNav;
+
+}

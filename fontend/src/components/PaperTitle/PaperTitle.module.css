@@ -1,0 +1,66 @@
+.paperTitle{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 12px;
+}
+.paperTitle h1{
+    font-size: 32px;
+    color: white
+}
+
+.direction{
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #828282;
+}
+.direction a{
+    color: #828282;
+    text-decoration: none;
+}
+.direction a:hover{
+    text-decoration: underline;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 32px;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    padding: 12px 20px;
+}
+.detail {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+.detail .buttonCont{
+    display: flex;
+    gap: 20px;
+    height: 32px;
+}
+.video, .share{
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .4s;
+}
+.video:hover, .share:hover{
+    scale: 1.1;
+}
+.author {
+    text-decoration: none;
+    color: white;
+}
+.author:hover{
+    text-decoration: underline;
+}

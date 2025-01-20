@@ -1,0 +1,24 @@
+.paperContent{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+    color: white;
+    line-height: 1.5;
+    gap: 20px;
+}
+
+.paperContent p{
+    text-align: justify;
+    word-wrap: break-word;
+}
+.paperContent h1{
+    font-size: 28px;
+}
+.paperContent h2{
+    font-size: 24px;
+
+}
+.paperContent h3{
+    font-size: 20px;
+}

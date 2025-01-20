@@ -3,7 +3,6 @@
     width: 100%;
     min-height: 540px;
     padding: 0 4%;
-    margin: 100px 0;
     grid-template-columns: 1fr 360px;
     grid-template-rows: 180px 360px;
     grid-template-areas:
