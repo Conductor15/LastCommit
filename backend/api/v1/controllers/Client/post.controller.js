@@ -1,6 +1,6 @@
-const Post = require("../models/post.model");
-const paginationHelper = require("../../../helpers/pagination");
-const searchHelper = require("../../../helpers/search");
+const Post = require("../../models/post.model");
+const paginationHelper = require("../../../../helpers/pagination");
+const searchHelper = require("../../../../helpers/search");
 
 // [GET] /api/v1/posts
 module.exports.index = async (req, res) => {

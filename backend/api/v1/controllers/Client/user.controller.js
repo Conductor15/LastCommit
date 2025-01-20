@@ -1,9 +1,9 @@
 const md5 = require("md5");
-const User = require("../models/user.model")
-const forgotPassword = require("../models/forgot-password.model")
+const User = require("../../models/user.model")
+const forgotPassword = require("../../models/forgot-password.model")
 
-const generateHelper = require("../../../helpers/generate");
-const sendMailHelper = require("../../../helpers/sendMail");
+const generateHelper = require("../../../../helpers/generate");
+const sendMailHelper = require("../../../../helpers/sendMail");
 
 
 // [POST] /api/v1/users/register
