@@ -6,7 +6,7 @@ function Card1(props) {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.card1} id={props.id} onClick={()=>navigate(`/detail/${props.id}`)}>
+    <div className={styles.card1} id={props.id} onClick={()=>navigate(`detail/${props.id}`)}>
     <img src={props.image} alt={props.title} />
     <div className={styles.textContainer}>
       <h1 alt={props.title}>{props.title}</h1>

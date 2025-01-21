@@ -44,7 +44,7 @@ function HList(props) {
                         return <button onClick={() => setPage(i+1)}>{i+1}</button>
                     }
                 ));
-                if (page > 1) navigate('?page='+page, {replace: true});
+                navigate('?page='+page, {replace: true});
             })
     }, [page]);
 
