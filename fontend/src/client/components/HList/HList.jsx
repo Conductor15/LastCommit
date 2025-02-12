@@ -2,52 +2,52 @@ import styles from './HList.module.css';
 import Card1 from '../../../shared/components/Card/Card1/Card1.jsx';
 import { useState, useEffect } from 'react';
 import API from '../../../shared/utils/API.js';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams  } from 'react-router-dom';
 
 function HList(props) {
-    const [posts, setPosts] = useState();
-    const [page, setPage] = useState(1);
-    const [pagesBut, setPagesBut] = useState();
+    // State management
+    const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [totalPages, setTotalPages] = useState(0);
+
     const navigate = useNavigate();
-    function nextPage(){
-        if(posts.length < 4) return;
-        setPage(page+1);
-    }
+    const [searchParams] = useSearchParams();
+    const currentPage = parseInt(searchParams.get('page')) || 1;
 
-    function prePage(){
-        if(page === 1) return;
-        setPage(page-1);
-    }
-
+    // Fetch posts khi page thay đổi
     useEffect(() => {
-        fetch(API.get_posts+`?page=${page}`)
-        .then(response => response.json())
-        .then(json => {
-                if (page === 1) {
-                    document.querySelector(`.${styles.prev}`).style.display = 'none';
-                } else {
-                    document.querySelector(`.${styles.prev}`).style.display = 'flex';
-                }
-                setPosts(json.data.map(post => {
-                return <Card1 
-                     id={post._id}
-                     title={post.title}
-                     author={post.author}
-                     date={post.createdAt}
-                     description={post.description}
-                     image={post.thumbnail}
-                     category={post.category}
-                 />;
-                }));
-                setPagesBut(
-                    Array.from({length: json.pagination.totalPage}, (_, i) => {
-                        return <button onClick={() => setPage(i+1)}>{i+1}</button>
-                    }
-                ));
-                navigate('?page='+page, {replace: true});
-            })
-    }, [page]);
+    setIsLoading(true);
+    setError(null);
 
+    fetch(`${API.get_posts}?page=${currentPage}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch posts');
+            }
+            return response.json();
+        })
+        .then(json => {
+            setPosts(json.data);
+            setTotalPages(json.pagination.totalPage);
+            navigate(`?page=${currentPage}`, { replace: true });
+        })
+        .catch(err => {
+            setError(err.message);
+        })
+        .finally(() => {
+            setIsLoading(false);
+        });
+    }, [currentPage, navigate]);
+
+    // Xử lý chuyển trang
+    const handlePageChange = (newPage) => {
+    if (newPage < 1 || newPage > totalPages) return;
+    navigate(`?page=${newPage}`);
+    };
+
+    
+    
     return (
         <div className={styles.hList}> 
             <div className={styles.headingCont}>
@@ -56,13 +56,44 @@ function HList(props) {
             </h1>
             {/* <a href="">View more <i className='ti-angle-right'></i> </a> */}
             </div>
-                <button className={`${styles.navBut} ${styles.prev}`} onClick={prePage}><i className="ti-angle-left"></i></button>
-                <button className={`${styles.navBut} ${styles.next}`} onClick={nextPage}><i className="ti-angle-right"></i></button>
+                <button 
+                    style={{ display: currentPage === 1 ? 'none' : 'flex' }}
+                    className={`${styles.navBut} ${styles.prev}`} 
+                    onClick={() => handlePageChange(currentPage-1)}
+                >
+                    <i className="ti-angle-left"></i>
+                </button>
+
+                <button 
+                    style={{ display: currentPage === totalPages ? 'none' : 'flex' }}
+                    className={`${styles.navBut} ${styles.next}`} 
+                    onClick={() => handlePageChange(currentPage+1)}
+                >
+                    <i className="ti-angle-right"></i>
+                </button>   
             <div className={styles.cardContainer}>
-                {posts}
+                {posts.map(post => (
+                    <Card1
+                        key={post._id} 
+                        id={post._id}
+                        title={post.title}
+                        author={post.author}
+                        date={post.createdAt}
+                        description={post.description}
+                        image={post.thumbnail}
+                        category={post.category}
+                />            
+                ))}
             </div>
             <div className={styles.pagesBut}>
-                {pagesBut}
+            {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                    key={i + 1}
+                    onClick={() => handlePageChange(i + 1)}
+                    className={currentPage === i + 1 ? styles.activePage : ''}>
+                {i + 1}
+                </button>
+            ))}
             </div>
         </div>
     );

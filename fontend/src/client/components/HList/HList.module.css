@@ -65,3 +65,29 @@
 .hList .navBut.next{
     right: -60px;
 }
+
+.pagesBut{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.pagesBut button {
+    background-color: white;
+    border: none;
+    border-radius: 25%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.pagesBut button:hover{
+    scale: 1.1;
+}
+.pagesBut button.activePage{
+    opacity: 0.5;
+}
