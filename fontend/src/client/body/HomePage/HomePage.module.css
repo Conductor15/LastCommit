@@ -1,0 +1,18 @@
+.leftImg, .rightImg{
+    position: fixed;
+    top: 60px;
+    z-index: -1;
+    width: 25%;
+    height: auto;
+    opacity: 0.5;
+    filter: blur(8px)
+}
+.leftImg{
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.rightImg{
+    right: 0;
+    transform: translateX(50%);
+}
