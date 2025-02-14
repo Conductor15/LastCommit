@@ -1,0 +1,18 @@
+.header{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 5px 20px;
+    background-color: #333; 
+    height: 40px; 
+    &__logo{
+        height: 30px; 
+        width: auto;
+    }
+    &__info{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%; 
+        object-fit: cover;
+    }
+}

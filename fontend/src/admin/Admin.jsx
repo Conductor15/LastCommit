@@ -1,8 +1,11 @@
+import Header from "./components/header/header";
+import SideBar from "./components/SideBar/sidebar";
 
 function Admin() {
   return (
     <div>
-      <h1>Admin</h1>
+      <Header/>
+      <SideBar/>
     </div>
   );
 }
