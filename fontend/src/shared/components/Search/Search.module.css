@@ -1,0 +1,31 @@
+.searchContainer {
+  display: flex;
+  height: 32px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #ffff;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: .8s;
+}
+.searchContainer:hover input, .searchContainer:focus-within input {
+  width: 200px;
+}
+.searchContainer input {
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: .8s;
+    background: transparent;
+    transform-origin: right;
+}
+.searchContainer button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color:  black;
+    font-size: 16px;
+}

@@ -3,7 +3,7 @@ import Card1 from '../../../shared/components/Card/Card1/Card1.jsx';
 import { useState, useEffect } from 'react';
 import API from '../../../shared/utils/API.js';
 import { useNavigate, useSearchParams  } from 'react-router-dom';
-
+import loadingPic from '../../../shared/assets/loading.svg';
 function HList(props) {
     // State management
     const [posts, setPosts] = useState([]);
@@ -46,8 +46,6 @@ function HList(props) {
     navigate(`?page=${newPage}`);
     };
 
-    
-    
     return (
         <div className={styles.hList}> 
             <div className={styles.headingCont}>
@@ -72,6 +70,8 @@ function HList(props) {
                     <i className="ti-angle-right"></i>
                 </button>   
             <div className={styles.cardContainer}>
+            {isLoading? <img src={loadingPic} alt="" className={styles.load}/> : null}
+            {error ? <p className={styles.error}>{error}</p> : null}
                 {posts.map(post => (
                     <Card1
                         key={post._id} 

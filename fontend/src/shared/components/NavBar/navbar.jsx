@@ -12,7 +12,7 @@ function NavBar() {
 
   return (
     <ul id={styles.navbar}>
-        <li> <Link id={styles.currPage} to="/">Home</Link> </li>
+        <li> <Link id={styles.currPage} to="/client">Home</Link> </li>
         <li> <Link to="">DSA</Link> </li>
         <li> <Link to="">Software</Link></li>
         <li> <Link to="">Data Science</Link></li>
